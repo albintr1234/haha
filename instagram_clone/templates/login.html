@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .error-msg {
+            color: red;
+            font-size: 14px;
+            margin-top: 8px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="POST">
+            <h1 class="logo">Instagram</h1>
+
+            <input type="text" name="username" placeholder="Phone number, username or email" required>
+            <input type="password" name="password" placeholder="Password" required>
+
+            {% if error %}
+            <div class="error-msg">Sorry, your password was incorrect. Please double-check your password.</div>
+            {% endif %}
+
+            <div class="forgot"><a href="#">Forgot password?</a></div>
+            <button type="submit">Log In</button>
+            <div class="or">OR</div>
+            <div class="facebook-btn"></div>
+        </form>
+        <div class="signup">
+            Don't have an account? <a href="#">Sign Up.</a>
+        </div>
+    </div>
+</body>
+</html>
